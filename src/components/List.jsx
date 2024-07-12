@@ -10,6 +10,10 @@ const List = () => {
   },{
     refetchInterval: 1000
   });
+
+  const handleDelete = ()=>{
+
+  }
   return (
     <Box
       sx={{
@@ -100,6 +104,7 @@ const List = () => {
                     cursor: "pointer",
                     "::selection": { bgcolor: "transparent" },
                   }}
+                  onClick={handleDelete}
                 >
                   Delete
                 </Typography>
