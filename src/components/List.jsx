@@ -7,6 +7,8 @@ const List = () => {
   const { changeShowAddForm } = useStore();
   const { data } = useQuery("toDo", () => {
     return axios.get("http://localhost:3000/toDos");
+  },{
+    refetchInterval: 1000
   });
   return (
     <Box
@@ -89,17 +91,17 @@ const List = () => {
                     "::selection": { bgcolor: "transparent" },
                   }}
                 >
-                  E
+                  Edit
                 </Typography>
                 <Typography
                   sx={{
                     color: "white",
-                    ":hover": { color: "yellowgreen" },
+                    ":hover": { color: "red" },
                     cursor: "pointer",
                     "::selection": { bgcolor: "transparent" },
                   }}
                 >
-                  D
+                  Delete
                 </Typography>
               </div>
             </Box>
